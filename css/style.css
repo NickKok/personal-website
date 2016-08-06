@@ -147,7 +147,7 @@ h3.title {
 }
 p {
     font-size: 1em;
-    color: #999;
+    color: black;
     line-height: 1.8em;
 }
 .about-right {
@@ -164,7 +164,7 @@ p {
 }
 .about-right ul li {
     display: block;
-    color: #999;
+    color: black;
     margin: 1em 0;
 	font-size:1em;
 }
