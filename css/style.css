@@ -807,6 +807,7 @@ h3.title {
 }
 #swipebox-title {
     font-size: 0.9em;
+	color:black;
 }
 }
 @media(max-width:768px){
