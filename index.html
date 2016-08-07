@@ -292,8 +292,11 @@ help foreign students settle in Greece.</p>
 			<h3 class="title wow zoomInLeft animated" data-wow-delay=".5s">My Projects</h3>
 			<div class="sap_tabs">			
 				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+				<center>	<button class="resp-tab-item" ng-click="toggleall()">All</button>
+					<button class="resp-tab-item" ng-click="togglecms()">CMS</button>
+					<button class="resp-tab-item" ng-click="togglemoodle()">Moodle</button>
+					<button class="resp-tab-item" ng-click="togglehtml5()">HTML5</button></center>
 					<ul class="resp-tabs-list wow fadeInUp animated" data-wow-delay=".7s">
-						<button class="resp-tab-item" ng-click="toggle()">Show user</button>
 						<li class="resp-tab-item"  ><span>All</span></li>
 						<li class="resp-tab-item"><span>CMS</span></li>
 						<li class="resp-tab-item"><span>Moodle</span></li>
@@ -303,7 +306,7 @@ help foreign students settle in Greece.</p>
 					<div class="resp-tabs-container">
 						<div class="tab-1 resp-tab-content">
 							<div class="tab_img">
-								<div class="col-md-4 portfolio-grids" ng-show="myVar">
+								<div class="col-md-4 portfolio-grids" ng-show="mycms">
 									<div class="grid">
 										<a href="images/scool.png" class="swipebox" title="S'Cool LAB main website from which the teacher submit their applycation to visit the LAB">
 											<img src="images/scool.png"  alt="" class="img-responsive" />
@@ -314,7 +317,7 @@ help foreign students settle in Greece.</p>
 										</a>	
 									</div>
 								</div>
-								<div class="col-md-4 portfolio-grids">
+								<div class="col-md-4 portfolio-grids" ng-show="mymoodle">
 									<div class="grid effect-sarah">
 										<a href="images/scool-learn.png" class="swipebox"  title="S'Cool LAB e-learning webiste for student">
 											<img src="images/scool-learn.png" alt="" class="img-responsive" />
@@ -325,7 +328,7 @@ help foreign students settle in Greece.</p>
 										</a>	
 									</div>
 								</div>
-								<div class="col-md-4 portfolio-grids">
+								<div class="col-md-4 portfolio-grids" ng-show="mycms" >
 									<div class="grid effect-sarah">
 										<a href="images/visit.png" class="swipebox" title="CERN Visit service website which provide info to visiters">
 											<img src="images/visit.png" alt="" class="img-responsive" />
@@ -336,7 +339,7 @@ help foreign students settle in Greece.</p>
 										</a>	
 									</div>
 								</div>
-								<div class="col-md-4 portfolio-grids">
+								<div class="col-md-4 portfolio-grids" ng-show="mycms">
 									<div class="grid">
 										<a href="images/teachers.png" class="swipebox" title="CERN Teacher programmes website which provide info to teachers">
 											<img src="images/teachers.png" alt="" class="img-responsive" />
@@ -347,7 +350,7 @@ help foreign students settle in Greece.</p>
 										</a>	
 									</div>
 								</div>
-								<div class="col-md-4 portfolio-grids">
+								<div class="col-md-4 portfolio-grids" ng-show="mycms">
 									<div class="grid">
 										<a href="images/study.png" class="swipebox" title="Website dedicated to help foreign students settle in Greece.">
 											<img src="images/study.png" alt="" class="img-responsive" />
@@ -453,9 +456,23 @@ help foreign students settle in Greece.</p>
 var app = angular.module('myApp', []);
 app.controller('personCtrl', function($scope) {
  
-    $scope.myVar = false;
-    $scope.toggle = function() {
-        $scope.myVar = !$scope.myVar;
+    
+	$scope.mycms = false;
+	$scope.mymoodle = false;
+	$scope.myhtml5 = false;
+    $scope.toggleall = function() {
+        $scope.mycms = !$scope.mycms;
+		$scope.mymoodle = !$scope.mymoodle;
+		$scope.myhtml5 = !$scope.myhtml5;
+    };
+	$scope.toggleacms = function() {
+        $scope.mycms = !$scope.mycms;
+    };
+	$scope.togglemoodle = function() {
+        $scope.mymoodle = !$scope.mymoodle;
+    };
+	$scope.toggleahtml5 = function() {
+        $scope.myhtml5 = !$scope.myhtml5;
     };
 });
 </script>
