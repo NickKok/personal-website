@@ -42,7 +42,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <!--//end-smooth-scrolling-->
 </head>
-<body  ng-app="myPage">
+<body ng-app="myApp" ng-controller="personCtrl">
 	<!--banner-->
 	<div id="home" class="banner">
 		<div class="banner-info">
@@ -293,7 +293,7 @@ help foreign students settle in Greece.</p>
 			<div class="sap_tabs">			
 				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 					<ul class="resp-tabs-list wow fadeInUp animated" data-wow-delay=".7s">
-						<li class="resp-tab-item"><span>All</span></li>
+						<li class="resp-tab-item"  ng-click="toggle()"><span>All</span></li>
 						<li class="resp-tab-item"><span>CMS</span></li>
 						<li class="resp-tab-item"><span>Moodle</span></li>
 						<li class="resp-tab-item"><span>HTML5</span></li>											
@@ -302,7 +302,7 @@ help foreign students settle in Greece.</p>
 					<div class="resp-tabs-container">
 						<div class="tab-1 resp-tab-content">
 							<div class="tab_img">
-								<div class="col-md-4 portfolio-grids">
+								<div class="col-md-4 portfolio-grids" ng-show="myVar">
 									<div class="grid">
 										<a href="images/scool.png" class="swipebox" title="S'Cool LAB main website from which the teacher submit their applycation to visit the LAB">
 											<img src="images/scool.png"  alt="" class="img-responsive" />
@@ -448,6 +448,16 @@ help foreign students settle in Greece.</p>
 			</div>
 			<!--ResponsiveTabs-->
 			<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+			<script>
+var app = angular.module('myApp', []);
+app.controller('personCtrl', function($scope) {
+ 
+    $scope.myVar = false;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+    };
+});
+</script>
 			<script type="text/javascript">
 				$(document).ready(function () {
 					$('#horizontalTab').easyResponsiveTabs({
@@ -504,7 +514,7 @@ help foreign students settle in Greece.</p>
 	<!--footer-->
 	<div class="footer">
 		<div class="container">
-			<p>© 2016 My Resume. All rights reserved | Design by W3layouts</p>
+			<p>© 2016 My Resume.Template design by W3layouts</p>
 		</div>
 	</div>
 	<!--//footer-->
