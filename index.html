@@ -23,7 +23,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--//Custom Theme files-->
 <!--js-->
 <script src="js/jquery-1.11.1.min.js"></script> 
-<script src="js/angular-1.4.8.js"></script> 
+<script src="js/angular-1.4.8.js"></script>
+<script src="js/typed.min.js"></script>  
 <!-- //js -->
 <!--web-fonts-->
 <link href='//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -52,9 +53,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<img src="images/img1.jpg" alt=""/>
 				</div>
 				<div class="col-md-8 header-right">
-					<h2>Hello</h2>
-					<h1>I'm Kokkinis-Ntrenis Nikolaos</h1>
+					
+					<h1 class="element"></h1>
 					<h6>Web amd Software Developer</h6>
+					<script>
+  $(function(){
+	  
+      $(".element").typed({
+        strings: ["Hello", "Welcome to my page","I'm Kokkinis-Ntrenis Nikolaos"],
+        typeSpeed: 55
+      });
+  });
+</script>
+					
+					
 					<ul class="address">
 						<li>
 							<ul class="address-text">
