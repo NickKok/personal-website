@@ -50,41 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="banner-info">
 			<div class="container">
 				<div class="col-md-4 header-left">
-					
-					<div class="navbar" ng-controller="withDirective" hover-bg-image="{{image}}"></div>
-					<script>
-						var app = angular.module("myApp",[])
-.directive('hoverBgImage',function(){
-    return {
-        link: function(scope, elm, attrs){
-            elm.bind('mouseenter',function(){
-                this.style.backgroundImage = 'url('+attrs.hoverBgImage+')';
-            });
-            elm.bind('mouseleave',function(){
-                this.style.backgroundImage = '';
-            })
-        }
-    };
-});
-
-
-function withDirective($scope){
-    $scope.image = "images/img1.jpg";
-}
-						
-						
-						
-						
-						
-						
-					</script>
-					
-					<style> .navbar{
-    height: 200px;
-    width: 200px;
-    border: 1px solid #000;
-    margin-bottom: 20px;
-}</style>
+				<img src="images/img1.jpg" alt=""/>
 					
 				</div>
 				<div class="col-md-8 header-right">
