@@ -50,7 +50,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="banner-info">
 			<div class="container">
 				<div class="col-md-4 header-left">
-					<img src="images/img1.jpg" alt=""/>
+					<div ng-init="bg = ''" ng-mouseenter="bg = 'images/img1.jpg'" ng-mouseleave="bg = ''" style="background-image: url({{bg}});"></div>
+					<script>var app = angular.module("myApp",[])
+						.directive('hoverBgImage',function(){
+    						return {
+							 link: function(scope, elm, attrs){
+            							elm.bind('mouseenter',function(){
+                					this.style.backgroundImage = 'url('+attrs.hoverBgImage+')';
+            							});
+            					elm.bind('mouseleave',function(){
+                			this.style.backgroundImage = '';
+            				})
+					 }
+    				};
+				});</script>
 				</div>
 				<div class="col-md-8 header-right">
 					
