@@ -7,6 +7,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
+
+	<link rel="stylesheet" href="ammap.css" type="text/css">
+	<script src="ammap.js" type="text/javascript"></script>
+	<!-- map file should be included after ammap.js -->
+<script src="maps/worldLow.js" type="text/javascript"></script>
+	<script>
+var map;
+
+function writeDevInfo(event) {
+		document.getElementById("devInfo").innerHTML = event.str;
+}
+
+AmCharts.ready(function() {
+		map = new AmCharts.AmMap();
+
+
+		map.balloon.color = "#CC0000";
+
+	var icon= "M21.25,8.375V28h6.5V8.375H21.25zM12.25,28h6.5V4.125h-6.5V28zM3.25,28h6.5V12.625h-6.5V28z";
+
+	var dataProvider = {
+			mapVar: AmCharts.maps.worldLow,
+			images:[
+{latitude:-25.2744, longitude:133.7751, svgPath:icon, color:"#CC0000", scale:0.5, label:"Australia", labelShiftY:2, zoomLevel:5, title:"Australia", description:"Number of proposals: 2"},
+{latitude:47.5162, longitude:14.5501, svgPath:icon, color:"#CC0000", scale:0.5, label:"Austria", labelShiftY:2, zoomLevel:5, title:"Austria", description:"Number of proposals: 2"},
+{latitude:26.0667, longitude:50.5577, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bahrain", labelShiftY:2, zoomLevel:5, title:"Bahrain", description:"Number of proposals: 2"},
+{latitude:23.685, longitude:90.3563, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bangladesh", labelShiftY:2, zoomLevel:5, title:"Bangladesh", description:"Number of proposals: 2"},
+{latitude:50.5039, longitude:4.4699, svgPath:icon, color:"#CC0000", scale:0.5, label:"Belgium", labelShiftY:2, zoomLevel:5, title:"Belgium", description:"Number of proposals: 1"},
+{latitude:-14.235, longitude:-51.9253, svgPath:icon, color:"#CC0000", scale:0.5, label:"Brazil", labelShiftY:2, zoomLevel:5, title:"Brazil", description:"Number of proposals: 5"},
+{latitude:42.7339, longitude:25.4858, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bulgaria", labelShiftY:2, zoomLevel:5, title:"Bulgaria", description:"Number of proposals: 1"},
+{latitude:56.1304, longitude:-106.3468, svgPath:icon, color:"#CC0000", scale:0.5, label:"Canada", labelShiftY:2, zoomLevel:5, title:"Canada", description:"Number of proposals: 15"},
+
+]
+
+};
+
+		map.dataProvider = dataProvider;
+
+		//map.smallMap = new AmCharts.SmallMap();//if you want a minimap at the top right corner of your screen uncomment the line
+
+		// developer mode related
+		map.developerMode = true;
+		map.addListener("writeDevInfo", writeDevInfo);
+
+		map.write("mapdiv");
+
+});
+ </script>
 <title>My Personal website</title>
 <!--mobile apps-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -593,15 +641,18 @@ app.controller('personCtrl', function($scope) {
 	</div>
 	<!--//contact -->
 	<!--footer-->
-	<div id="about" class="about">
+<div id="work" class="work">
 		<div class="container">
 			<h3 class="title"> Hobbies</h3>
 			<div class="col-md-8 about-left">
-				My major hobby is to travel and meet new people and discover new things
+				<h2>My major hobby is to travel and meet new people and discover new things<h2>
+				</h2>Over here are all the countries that i have visit.</h2>
+					<div id="mapdiv" style="width: 800px; background-color:white; height: 500px;"></div>
+
 </div>
 	</div>
 	</div>
-	
+
 	<div class="footer">
 		<div class="container">
 			<p>© 2016 My Resume.Template design by W3layouts</p>
