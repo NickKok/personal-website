@@ -30,14 +30,28 @@ AmCharts.ready(function() {
 	var dataProvider = {
 			mapVar: AmCharts.maps.worldLow,
 			images:[
-{latitude:-25.2744, longitude:133.7751, svgPath:icon, color:"#CC0000", scale:0.5, label:"Australia", labelShiftY:2, zoomLevel:5, title:"Australia", description:"Number of proposals: 2"},
-{latitude:47.5162, longitude:14.5501, svgPath:icon, color:"#CC0000", scale:0.5, label:"Austria", labelShiftY:2, zoomLevel:5, title:"Austria", description:"Number of proposals: 2"},
-{latitude:26.0667, longitude:50.5577, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bahrain", labelShiftY:2, zoomLevel:5, title:"Bahrain", description:"Number of proposals: 2"},
-{latitude:23.685, longitude:90.3563, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bangladesh", labelShiftY:2, zoomLevel:5, title:"Bangladesh", description:"Number of proposals: 2"},
-{latitude:50.5039, longitude:4.4699, svgPath:icon, color:"#CC0000", scale:0.5, label:"Belgium", labelShiftY:2, zoomLevel:5, title:"Belgium", description:"Number of proposals: 1"},
-{latitude:-14.235, longitude:-51.9253, svgPath:icon, color:"#CC0000", scale:0.5, label:"Brazil", labelShiftY:2, zoomLevel:5, title:"Brazil", description:"Number of proposals: 5"},
-{latitude:42.7339, longitude:25.4858, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bulgaria", labelShiftY:2, zoomLevel:5, title:"Bulgaria", description:"Number of proposals: 1"},
-{latitude:56.1304, longitude:-106.3468, svgPath:icon, color:"#CC0000", scale:0.5, label:"Canada", labelShiftY:2, zoomLevel:5, title:"Canada", description:"Number of proposals: 15"},
+				{latitude:39.0742, longitude:21.8243, svgPath:icon, color:"#CC0000", scale:0.5, label:"Greece", labelShiftY:2, zoomLevel:5, title:"Greece"},
+				{latitude:55.3781, longitude:-3.436, svgPath:icon, color:"#CC0000", scale:0.5, label:"United Kingdom", labelShiftY:2, zoomLevel:5, title:"United Kingdom" },
+				{latitude:37.0902, longitude:-95.7129, svgPath:icon, color:"#CC0000", scale:0.5, label:"United States", labelShiftY:2, zoomLevel:5, title:"United States"},
+				{latitude:42.7087, longitude:19.3744, svgPath:icon, color:"#CC0000", scale:0.5, label:"Montenegro", labelShiftY:2, zoomLevel:5, title:"Montenegro"},
+				{latitude:41.8719, longitude:12.5674, svgPath:icon, color:"#CC0000", scale:0.5, label:"Italy", labelShiftY:2, zoomLevel:5, title:"Italy"},
+				{latitude:40.4637, longitude:-3.7492, svgPath:icon, color:"#CC0000", scale:0.5, label:"Spain", labelShiftY:2, zoomLevel:5, title:"Spain"},
+				{latitude:46.8182, longitude:8.2275, svgPath:icon, color:"#CC0000", scale:0.5, label:"Switzerland", labelShiftY:2, zoomLevel:5, title:"Switzerland"},
+				{latitude:52.1326, longitude:5.2913, svgPath:icon, color:"#CC0000", scale:0.5, label:"Netherlands", labelShiftY:2, zoomLevel:5, title:"Netherlands"},
+				{latitude:47.1625, longitude:19.5033, svgPath:icon, color:"#CC0000", scale:0.5, label:"Hungary", labelShiftY:2, zoomLevel:5, title:"Hungary"},
+				{latitude:46.2276, longitude:2.2137, svgPath:icon, color:"#CC0000", scale:0.5, label:"France", labelShiftY:2, zoomLevel:5, title:"France" },
+				{latitude:51.1657, longitude:10.4515, svgPath:icon, color:"#CC0000", scale:0.5, label:"Germany", labelShiftY:2, zoomLevel:5, title:"Germany"},
+				{latitude:50.5039, longitude:4.4699, svgPath:icon, color:"#CC0000", scale:0.5, label:"Belgium", labelShiftY:2, zoomLevel:5, title:"Belgium"},
+				{latitude: 33.589886, longitude:-7.603869, svgPath:icon, color:"#CC0000", scale:0.5, label:"Morocco", labelShiftY:2, zoomLevel:5, title:"Morocco"},
+				{latitude:  42, longitude:21.4333333, svgPath:icon, color:"#CC0000", scale:0.5, label:"Macedonia", labelShiftY:2, zoomLevel:5, title:"Macedonia"},
+{latitude: 42.5269444444, longitude:21.0072222222, svgPath:icon, color:"#CC0000", scale:0.5, label:"Kosovo", labelShiftY:2, zoomLevel:5, title:"Kosovo"},
+{latitude:46.1512, longitude:14.9955, svgPath:icon, color:"#CC0000", scale:0.5, label:"Slovenia", labelShiftY:2, zoomLevel:5, title:"Slovenia"},
+{latitude:49.611622, longitude:6.131935, svgPath:icon, color:"#CC0000", scale:0.5, label:"Luxembourg", labelShiftY:2, zoomLevel:5, title:"Luxembourg"},
+{latitude:44.811962, longitude:15.868565, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bosnia and Herzegovina", labelShiftY:2, zoomLevel:5, title:"Bosnia and Herzegovina"},
+{latitude:45.815399, longitude:15.966568, svgPath:icon, color:"#CC0000", scale:0.5, label:"Croatia", labelShiftY:2, zoomLevel:5, title:"Croatia"}
+
+
+
 
 ]
 
@@ -645,9 +659,8 @@ app.controller('personCtrl', function($scope) {
 		<div class="container">
 			<h3 class="title"> Hobbies</h3>
 			<div class="col-md-8 about-left">
-				<h2 style="color:#F7E612;">My major hobby is to travel around the world, meet new people and discover new things<h2>
-				<h2 style="color:#F7E612;">Over here are all the countries that i have visit.</h2>
-					<div id="mapdiv" style="width: 800px; background-color:white; height: 500px;"></div>
+				<center><h2 style="color:#F7E612;width:1000px;">My major hobby is to travel around the world, meet new people and discover new things.Over here are all the countries that i have visit.<h2></center>
+					<div id="mapdiv" style="width: 1000px; background-color:white; height: 500px;"></div>
 
 </div>
 	</div>
