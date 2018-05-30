@@ -7,6 +7,68 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
+
+	<link rel="stylesheet" href="ammap.css" type="text/css">
+	<script src="ammap.js" type="text/javascript"></script>
+	<!-- map file should be included after ammap.js -->
+<script src="maps/worldLow.js" type="text/javascript"></script>
+	<script>
+var map;
+
+function writeDevInfo(event) {
+		document.getElementById("devInfo").innerHTML = event.str;
+}
+
+/*AmCharts.ready(function() {
+		map = new AmCharts.AmMap();
+
+
+		map.balloon.color = "#CC0000";
+
+	var icon= "M21.25,8.375V28h6.5V8.375H21.25zM12.25,28h6.5V4.125h-6.5V28zM3.25,28h6.5V12.625h-6.5V28z";
+
+	var dataProvider = {
+			mapVar: AmCharts.maps.worldLow,
+			images:[
+				{latitude:39.0742, longitude:21.8243, svgPath:icon, color:"#CC0000", scale:0.5, label:"Greece", labelShiftY:2, zoomLevel:5, title:"Greece"},
+				{latitude:55.3781, longitude:-3.436, svgPath:icon, color:"#CC0000", scale:0.5, label:"United Kingdom", labelShiftY:2, zoomLevel:5, title:"United Kingdom" },
+				{latitude:37.0902, longitude:-95.7129, svgPath:icon, color:"#CC0000", scale:0.5, label:"United States", labelShiftY:2, zoomLevel:5, title:"United States"},
+				{latitude:42.7087, longitude:19.3744, svgPath:icon, color:"#CC0000", scale:0.5, label:"Montenegro", labelShiftY:2, zoomLevel:5, title:"Montenegro"},
+				{latitude:41.8719, longitude:12.5674, svgPath:icon, color:"#CC0000", scale:0.5, label:"Italy", labelShiftY:2, zoomLevel:5, title:"Italy"},
+				{latitude:40.4637, longitude:-3.7492, svgPath:icon, color:"#CC0000", scale:0.5, label:"Spain", labelShiftY:2, zoomLevel:5, title:"Spain"},
+				{latitude:46.8182, longitude:8.2275, svgPath:icon, color:"#CC0000", scale:0.5, label:"Switzerland", labelShiftY:2, zoomLevel:5, title:"Switzerland"},
+				{latitude:52.1326, longitude:5.2913, svgPath:icon, color:"#CC0000", scale:0.5, label:"Netherlands", labelShiftY:2, zoomLevel:5, title:"Netherlands"},
+				{latitude:47.1625, longitude:19.5033, svgPath:icon, color:"#CC0000", scale:0.5, label:"Hungary", labelShiftY:2, zoomLevel:5, title:"Hungary"},
+				{latitude:46.2276, longitude:2.2137, svgPath:icon, color:"#CC0000", scale:0.5, label:"France", labelShiftY:2, zoomLevel:5, title:"France" },
+				{latitude:51.1657, longitude:10.4515, svgPath:icon, color:"#CC0000", scale:0.5, label:"Germany", labelShiftY:2, zoomLevel:5, title:"Germany"},
+				{latitude:50.5039, longitude:4.4699, svgPath:icon, color:"#CC0000", scale:0.5, label:"Belgium", labelShiftY:2, zoomLevel:5, title:"Belgium"},
+				{latitude: 33.589886, longitude:-7.603869, svgPath:icon, color:"#CC0000", scale:0.5, label:"Morocco", labelShiftY:2, zoomLevel:5, title:"Morocco"},
+				{latitude:  42, longitude:21.4333333, svgPath:icon, color:"#CC0000", scale:0.5, label:"Macedonia", labelShiftY:2, zoomLevel:5, title:"Macedonia"},
+{latitude: 42.5269444444, longitude:21.0072222222, svgPath:icon, color:"#CC0000", scale:0.5, label:"Kosovo", labelShiftY:2, zoomLevel:5, title:"Kosovo"},
+{latitude:46.1512, longitude:14.9955, svgPath:icon, color:"#CC0000", scale:0.5, label:"Slovenia", labelShiftY:2, zoomLevel:5, title:"Slovenia"},
+{latitude:49.611622, longitude:6.131935, svgPath:icon, color:"#CC0000", scale:0.5, label:"Luxembourg", labelShiftY:2, zoomLevel:5, title:"Luxembourg"},
+{latitude:44.811962, longitude:15.868565, svgPath:icon, color:"#CC0000", scale:0.5, label:"Bosnia and Herzegovina", labelShiftY:2, zoomLevel:5, title:"Bosnia and Herzegovina"},
+{latitude:45.815399, longitude:15.966568, svgPath:icon, color:"#CC0000", scale:0.5, label:"Croatia", labelShiftY:2, zoomLevel:5, title:"Croatia"}
+
+
+
+
+]
+
+};
+
+		map.dataProvider = dataProvider;
+
+		//map.smallMap = new AmCharts.SmallMap();//if you want a minimap at the top right corner of your screen uncomment the line
+
+		// developer mode related
+		map.developerMode = true;
+		map.addListener("writeDevInfo", writeDevInfo);
+
+		map.write("mapdiv");
+
+});*/
+ </script>
 <title>My Personal website</title>
 <!--mobile apps-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,8 +84,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <!--//Custom Theme files-->
 <!--js-->
-<script src="js/jquery-1.11.1.min.js"></script> 
-<script src="js/angular-1.4.8.js"></script> 
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/angular-1.4.8.js"></script>
+<script src="js/typed.min.js"></script>
 <!-- //js -->
 <!--web-fonts-->
 <link href='//fonts.googleapis.com/css?family=Overlock:400,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
@@ -31,10 +94,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--//web-fonts-->
 <!--start-smooth-scrolling-->
 <script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>	
+<script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript">
 		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){		
+			$(".scroll").click(function(event){
 				event.preventDefault();
 				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
@@ -49,6 +112,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="banner-info">
 			<div class="container">
 				<div class="col-md-4 header-left">
+<<<<<<< HEAD
+				<img src="images/img1.jpg" alt=""/>
+
+=======
 					<div ng-init="bg = ''" ng-mouseenter="bg = 'images/img1.jpg'" ng-mouseleave="bg = ''" style="background-image: url({{bg}});"></div>
 					<script>var app = angular.module("myApp",[])
 						.directive('hoverBgImage',function(){
@@ -63,11 +130,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 }
     				};
 				});</script>
+>>>>>>> master
 				</div>
 				<div class="col-md-8 header-right">
-					<h2>Hello</h2>
-					<h1>I'm Kokkinis-Ntrenis Nikolaos</h1>
+
+					<h1 class="element"></h1>
 					<h6>Web amd Software Developer</h6>
+					<script>
+  $(function(){
+
+      $(".element").typed({
+        strings: ["Hello", "Welcome to my page","I'm Kokkinis-Ntrenis Nikolaos"],
+        typeSpeed: 56
+      });
+  });
+</script>
+
+
 					<ul class="address">
 						<li>
 							<ul class="address-text">
@@ -111,7 +190,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 	<!--//top-nav-->
 	<!--about-->
 	<div id="about" class="about">
@@ -119,32 +198,95 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3 class="title"> About Me</h3>
 			<div class="col-md-8 about-left">
 				<p>I always enjoyed studying and examining anything related to computer science.</p>
-				<p>I had the pleassure to contribute in the "Discovering Similarities for Content-Based Recommendation and Browsing in Multimedia Collections" project as an intern in NCSR DEMOKRITOS research center and publish a paper in 10th internal Sitis Conference in Marocco.</p>
+				<p>I had the pleassure to contribute in the  "<a href="https://www.researchgate.net/publication/282373451_Discovering_Similarities_for_Content-Based_Recommendation_and_Browsing_in_Multimedia_Collections"> Discovering Similarities for Content-Based Recommendation and Browsing in Multimedia Collections</a>" project as an intern in NCSR DEMOKRITOS research center and publish a paper in 10th internal Sitis Conference in Marocco.</p>
 				<p>I have been in various seminars in the field of Informatics while I have also
-participated in MOC courses (Udacity,Coursera).</p> 
+participated in MOC courses (Udacity,Coursera).</p>
 <p>Furthermore, I would be excited to work in an international environment and be exposed to different opinions and ideas
 since in my perspective it is an excellent way to broaden my horizons.This is the reason I had participated in the Erasmus program in University Lille1 and apply to work at CERN.</p>
-<p>In 2015, I was collaborating with two of my professors building a site dedicated to
-help foreign students settle in Greece.</p>
-<br>
-				<p>Currently i am working at CERN as a technical student. My projects at CERN are: </p>
-				<br>
-				<p>
-				<ul  style="padding-left:5em;color: black;">
+
+				<!--<ul  style="padding-left:5em;color: black;">
 				<li>Create a booking tool for teacher to come and visit S'Cool LAB.</li>
 				<li>Create Drupal websites for visit service, S'Cool LAB and  teachers programmes.</li>
 				<li>Create a moodle website which has online courses for the student that will make a visit to the Lab. </li>
-				<li> Create a software for a microprocessor timepix3(detect particles and throw a python socket  put all the data and transfer it  on user's browser.At the browser i use jsroot and d3.js to display all the data and the histogram of them.</li>
+				<li> Create a software for a microprocessor timepix3(detect particles and through a python socket  put all the data and transfer it  on user's browser.At the browser i use jsroot and d3.js to display all the data and the histogram of them.</li>
 				<li>Create the security of apache server(moodle website). Use comodo ssl cetification, disable weak ciphers, use failtoban to block scanning ips.</li>
 				<li>I do computer administrative work (repair laptops of lab, change ssd, install windows,linux) i was responsible of the laptops for international Master Class of CERN.</li>
-				</ul>
+				<br>
 				</p>
+				</ul>-->
+				<hr/>
+							<p>The projects that i had done during my bachelor degree: </p>
+							<br>
+							<p>Python:</p>
+							<p>
+							<ul  style="padding-left:5em;color: black;">
+							<li>Implement a web crawler(CS 101 Udacity course)</li>
+							<li>Create similarity matrix(Project NCSR DEMOKRITOS)</li>
+							<li>Clustering of users(Project NCSR DEMOKRITOS)</li>
+							<li> Textual feature extraction(Project NCSR DEMOKRITOS)</li>
+							</ul>
+							</p>
+
+							<p>Javascript:</p>
+							<p>
+							<ul  style="padding-left:5em;color: black;">
+							<li>Visualization the data(Project NCSR DEMOKRITOS)</li>
+							<li>Gps location register/Android(project of telematics Applications Development University Course)</li>
+							<li>Weather forcast/Android(project of telematics Applications Development University Course)</li>
+							</ul>
+							</p>
+
+							<p>C:</p>
+							<p>
+							<ul  style="padding-left:5em;color: black;">
+							<li>Implementation database management system(project of System Programming University Course)</li>
+							<li>Implementation Quicksort and Mergesort algorithms(project of Data Structures University Course)</li>
+							<li>Implementation of tic- tac- toe(project of Programming University Course)</li>
+							</ul>
+
+							<p>Java:</p>
+							<p>
+							<ul  style="padding-left:5em;color: black;">
+							<li>Implementantion of a carpooling applications(project of Programming in Java University Course)</li>
+							<li>Implementation of a mini social network (Project of System-Object-Oriented Programming University Course)</li>
+							<li>Implementation of E-bank system, using SOAP web services architecture(project of Networked and Distributed Systems University Course)</li>
+							</ul>
+							</p>
+
+							<p>Shell Script:</p>
+							<p>
+							<ul  style="padding-left:5em;color: black;">
+							<li>Implementation of paper scissors rock game wich playing two procces(project of Operating Systems University Course)</li>
+							</ul>
+							</p>
+
+
+							<p>Javascript/php/jsp:</p>
+							<p>
+							<ul  style="padding-left:5em;color: black;">
+							<li>Canvas/Map rendering(HTML5 Game Development Udacity course) </li>
+							<li>Asynchronous Loading(HTML5 Game Development Udacity course)</li>
+							<li>-Implement web page that will display picture of flickR using the REST API flickR provided (project of Distributed Systems University Course)</li>
+							<li>Video streaming web application via websocket protocol using html5(part of summerschool project) </li>
+							<li>Implematations of e-shop, e-cinema, using wordpress and drupal at each one (project of of Human-Computer Interaction University Course)</li>
+							</ul>
+							</p>
+
+
 			</div>
+
+
+
+
+
 			<div class="col-md-4 about-right">
 				<ul>
 					<h5>Awards</h5>
 					<li><span class="glyphicon glyphicon-play"></span>2nd place at the 2nd SemaGrow Hackathon</li>
-					
+          <li><span class="glyphicon glyphicon-play"></span>Pass the exams of the CERN school of computing(2weeks courses)</li>
+					<li><span class="glyphicon glyphicon-play"></span>Participate at HACKZurich create the project<a href="https://github.com/stevelaskaridis/depictit"> depictit </a></li>
+					<li><span class="glyphicon glyphicon-play"></span>Win the first prize of the <a href="http://athens.impacthub.net/en/event/hack-the-camp-hackathon-on-refugee-integration-challenges/"> Hack The Camp </a></li>
+					<li><span class="glyphicon glyphicon-play"></span> Accomplish a collaboration between CERN and Harokopio University </li>
 				</ul>
 				<div class="clearfix"> </div>
 			</div>
@@ -156,46 +298,105 @@ help foreign students settle in Greece.</p>
 	<div id="work" class="work">
 		<div class="container">
 			<h3 class="title">Work Experience</h3>
-			<div class="work-info"> 
-				<div class="col-md-6 work-left"> 
+
+			<div class="work-info">
+				<div class="col-md-6 work-right work-right2">
+					<h4>Octomber 2017 - Present</h4>
+				</div>
+				<div class="col-md-6 work-left work-left2">
+					<h5>Project Associate<span class="glyphicon glyphicon-briefcase"> </span></h5>
+					<p style="color:white;">Had started migrate the websites of Linear Collider Collaboration and International Linear Collider from the FermiLab of the USA to the CERN infrastructures </p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+			<div class="work-info">
+				<div class="col-md-6 work-left">
+					<h4>February 2017 - Present </h4>
+				</div>
+				<div class="col-md-6 work-right">
+					<h5><span class="glyphicon glyphicon-briefcase"> </span>Ebay Seller</h5>
+					<p style="color:white;">I had started it for fun and i was checking out how the online marketing is working and how i could be promoted on the web  but after loots of topics reading on forums and videos i manage to gain an extreme reputation and excellent feedback's which provide me decent monthly income</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			
+			<div class="work-info">
+				<div class="col-md-6 work-right work-right2">
+					<h4>August 2017- September 2017</h4>
+				</div>
+				<div class="col-md-6 work-left work-left2">
+					<h5>External User at CERN <span class="glyphicon glyphicon-briefcase"> </span></h5>
+					<p style="color:white;">Had started migrate the websites of Linear Collider Collaboration and International Linear Collider from the FermiLab of the USA to the CERN infrastructures </p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+
+
+			<div class="work-info">
+				<div class="col-md-6 work-left">
+					<h4>December 2016 - May 2017 </h4>
+				</div>
+				<div class="col-md-6 work-right">
+					<h5><span class="glyphicon glyphicon-briefcase"> </span>RefuGR</h5>
+					<p style="color:white;">My team had win a hackathon of Hack the Camp and i had made a prototype of an mobile app which provide info to the immigrants what each NGO provide to them. Also we provide videos of Greek language courses to Arabic and Farsi speakers to help immigrant communicate with the Greek authorities.</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+
+			<div class="work-info">
+				<div class="col-md-6 work-right work-right2">
+					<h4>Octomber 2016-December 2016</h4>
+				</div>
+				<div class="col-md-6 work-left work-left2">
+					<h5>Hua Ellak(Harokopio opensource community) <span class="glyphicon glyphicon-briefcase"> </span></h5>
+					<p style="color:white;">Collaborating with one of my professor and other students of the University to develop some applications for our University.(Automation on Erasmus+ pappers and on papers for the restaurant of the University)</p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="work-info">
+				<div class="col-md-6 work-left">
 					<h4>September 2015 - Octomber 2016 </h4>
 				</div>
-				<div class="col-md-6 work-right"> 
+				<div class="col-md-6 work-right">
 					<h5><span class="glyphicon glyphicon-briefcase"> </span>CERN</h5>
-					<p style="color:white;">Web amd software developer</p>
+					<p style="color:white;">
+    				<ul  style="padding-left:5em;color: white;">
+				<li>Create a booking tool for teacher to come and visit S'Cool LAB.</li>
+				<li>Create Drupal websites for visit service, S'Cool LAB and  teachers programmes.</li>
+				<li>Create a moodle website which has online courses for the student that will make a visit to the Lab. </li>
+				<li> Create a software for a microprocessor timepix3(detect particles and through a python socket  put all the data and transfer it  on user's browser.At the browser i use jsroot and d3.js to display all the data and the histogram of them.</li>
+				<li>Create the security of apache server(moodle website). Use comodo ssl cetification, disable weak ciphers, use failtoban to block scanning ips.</li>
+				<li>I do computer administrative work (repair laptops of lab, change ssd, install windows,linux) i was responsible of the laptops for international Master Class of CERN.</li>
+				<br>
+				</ul>
+				</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="work-info"> 
-				<div class="col-md-6 work-right work-right2"> 
-					<h4>January 2015-Now </h4>
+			<div class="work-info">
+				<div class="col-md-6 work-right work-right2">
+					<h4>January 2015 - Present </h4>
 				</div>
-				<div class="col-md-6 work-left work-left2"> 
-					<h5>Harokopio University<span class="glyphicon glyphicon-briefcase"> </span></h5>
-					<p style="color:white;">Collaborating with two of my professors building a site dedicated to help foreign students settle in Greece.</p>
+				<div class="col-md-6 work-left work-left2">
+					<h5>Study in Greece<span class="glyphicon glyphicon-briefcase"> </span></h5>
+					<p style="color:white;">Collaborating with two of my professors building a site dedicated to help foreign students settle in Greece. Now <a href="http://www.studyingreece.edu.gr/">Study in Greece</a> is a NGO collaborating with Ministry of Foreign Affairs and Ministry of Education, Research and Religious Affairs of Greece.</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="work-info"> 
-				<div class="col-md-6 work-left"> 
+			<div class="work-info">
+				<div class="col-md-6 work-left">
 					<h4>June 2014 </h4>
 				</div>
-				<div class="col-md-6 work-right"> 
+				<div class="col-md-6 work-right">
 					<h5><span class="glyphicon glyphicon-briefcase"> </span> NCSR Demokritos</h5>
 					<p style="color:white;">Participate at IRSS(International Research-Centered Summer School).</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="work-info"> 
-				<div class="col-md-6 work-right work-right2"> 
-					<h4> March 2012-Now  </h4>
-				</div>
-				<div class="col-md-6 work-left work-left2"> 
-					<h5>Hackerspace Athens <span class="glyphicon glyphicon-briefcase"></span> </h5>
-					<p style="color:white;">I have participated in various seminars, conferences and open source projects.</p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+			
 		</div>
 	</div>
 	<!--//work-experience-->
@@ -203,31 +404,58 @@ help foreign students settle in Greece.</p>
 	<div id="education" class="education">
 		<div class="container">
 			<h3 class="title">Education</h3>
-			<div class="work-info"> 
-				<div class="col-md-6 work-left"> 
-					<h4>Bachelor Degree 2010-Now</h4>
+
+
+
+			<div class="work-info">
+				<div class="col-md-6 work-left">
+					<h4>Bachelor Degree 2010 - Present</h4>
 				</div>
-				<div class="col-md-6 work-right"> 
+				<div class="col-md-6 work-right">
 					<h5><span class="glyphicon glyphicon-education"> </span> Harokopio University</h5>
-					<p>Bachelor  degree in Informatics and Telematics of Harokopio University of  Athens(PTYCHIO), Average grade: 7.69/10 (so far) </p>
+					<p>Bachelor  degree in Informatics and Telematics of Harokopio University of  Athens(PTYCHIO), Average grade: 7.69/10 (so far).
+					My thesis is to make a DIY quadcopter with Arduino Yun and manipulate his movement through Wifi from a laptop or mobile phone. The quadcopter has 5 sensors(temperature, humidity, noise detector,flame detector, gps) and collect those data through his flight time </p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="work-info"> 
-				<div class="col-md-6 work-right work-right2"> 
+
+			<div class="work-info">
+				<div class="col-md-6 work-right work-right2">
+					<h4>September 2016</h4>
+				</div>
+				<div class="col-md-6 work-left work-left2">
+					<h5> CERN school of computing <span class="glyphicon glyphicon-education"></span></h5>
+					<p>The CERN School of Computing promotes advanced learning and knowledge exchange in scientific computing among young scientists and engineers involved in particle physics or other sciences. </p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+			<div class="work-info">
+				<div class="col-md-6 work-left">
+					<h4>September 2015 - December 2015</h4>
+				</div>
+				<div class="col-md-6 work-right">
+					<h5><span class="glyphicon glyphicon-education"> </span> CERN White Hat courses </h5>
+					<p>It is provide  a realistic, live and operational environment open to be assessed on vulnerabilities and security weaknesses in order to train them as part of their cyber-security curriculum.  </p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+
+			<div class="work-info">
+				<div class="col-md-6 work-right work-right2">
 					<h4>Erasmus 2014 (January) – 2014(June)</h4>
 				</div>
-				<div class="col-md-6 work-left work-left2"> 
+				<div class="col-md-6 work-left work-left2">
 					<h5> Lille1 <span class="glyphicon glyphicon-education"></span></h5>
 					<p>Erasmus Studies in Lille1 University</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<div class="work-info"> 
-				<div class="col-md-6 work-left"> 
+			<div class="work-info">
+				<div class="col-md-6 work-left">
 					<h4> Finished high school - June 2010 </h4>
 				</div>
-				<div class="col-md-6 work-right"> 
+				<div class="col-md-6 work-right">
 					<h5><span class="glyphicon glyphicon-education"> </span> Experimental school of Agious Anargirous</h5>
 					<p>Graduation from high school: Final grade: 17/20 average rating </p>
 				</div>
@@ -303,15 +531,15 @@ help foreign students settle in Greece.</p>
 	<!--portfolio-->
 	<div id="projects" class="portfolio">
 		<div class="container">
-			<h3 class="title wow zoomInLeft animated" data-wow-delay=".5s">My Projects</h3>
-			<div class="sap_tabs">			
+			<h3 class="title wow zoomInLeft animated" data-wow-delay=".5s">My Websites project</h3>
+			<div class="sap_tabs">
 				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 				<center>	<button class="resp-tab-item" ng-click="toggleall()">All</button>
 					<button class="resp-tab-item" ng-click="togglecms()">CMS</button>
 					<button class="resp-tab-item" ng-click="togglemoodle()">Moodle</button>
-					<button class="resp-tab-item" ng-click="togglehtml5()">HTML5</button></center>
+					</center>
 
-					<div class="clearfix"> </div>	
+					<div class="clearfix"> </div>
 					<div class="resp-tabs-container">
 						<div class="tab-1 resp-tab-content">
 							<div class="tab_img">
@@ -323,7 +551,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>S'Cool LAB</span></h3>
 												<p><a href="https://scool.web.cern.ch/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="col-md-4 portfolio-grids" ng-show="mymoodle">
@@ -334,7 +562,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>S'Cool LAB e-learn</span></h3>
 												<p><a href="https://scool-learn.cern.ch/login/index.php" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="col-md-4 portfolio-grids" ng-show="mycms">
@@ -345,7 +573,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>CERN Visit service website</span></h3>
 												<p><a href="http://visits.web.cern.ch/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="col-md-4 portfolio-grids" ng-show="mycms">
@@ -356,7 +584,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>CERN Teacher programmes website</span></h3>
 												<p><a href="http://teacher-programmes.web.cern.ch/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="col-md-4 portfolio-grids" ng-show="mycms">
@@ -367,7 +595,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>Study in Greece</span></h3>
 												<p><a href="http://studyingreece.edu.gr/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -383,7 +611,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>S'Cool LAB</span></h3>
 												<p><a href="https://scool.web.cern.ch/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="col-md-4 portfolio-grids">
@@ -394,7 +622,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>CERN Visit service website</span></h3>
 												<p><a href="http://visits.web.cern.ch/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="col-md-4 portfolio-grids">
@@ -405,7 +633,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>CERN Teacher programmes website</span></h3>
 												<p><a href="http://teacher-programmes.web.cern.ch/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="col-md-4 portfolio-grids">
@@ -416,7 +644,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>Study in Greece</span></h3>
 												<p><a href="http://studyingreece.edu.gr/" target="_blank">Visit site!</a></p>
 											</div>
-										</a>	
+										</a>
 									</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -433,7 +661,7 @@ help foreign students settle in Greece.</p>
 												<h3><span>S'Cool LAB e-learn</span></h3>
 												<p><a href="https://scool-learn.cern.ch/login/index.php" target="_blank">Visit site!</a></p>
 											</div>
-										</a>		
+										</a>
 									</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -441,7 +669,7 @@ help foreign students settle in Greece.</p>
 						</div>
 						<div class="tab-1 resp-tab-content">
 							<div class="tab_img">
-								
+
 								<div class="clearfix"> </div>
 							</div>
 						</div>
@@ -453,8 +681,8 @@ help foreign students settle in Greece.</p>
 			<script>
 var app = angular.module('myApp', []);
 app.controller('personCtrl', function($scope) {
- 
-    
+
+
 	$scope.mycms = false;
 	$scope.mymoodle = false;
 	$scope.myhtml5 = false;
@@ -477,15 +705,15 @@ app.controller('personCtrl', function($scope) {
 			<script type="text/javascript">
 				$(document).ready(function () {
 					$('#horizontalTab').easyResponsiveTabs({
-						type: 'default', //Types: default, vertical, accordion           
+						type: 'default', //Types: default, vertical, accordion
 						width: 'auto', //auto or any width like 600px
 						fit: true   // 100% fit in a container
 					});
-				});		
+				});
 			</script>
 			<!--//ResponsiveTabs-->
 			<!-- swipe box js -->
-			<script src="js/jquery.swipebox.min.js"></script> 
+			<script src="js/jquery.swipebox.min.js"></script>
 				<script type="text/javascript">
 					//jQuery(function($) {
 					//	$(".swipebox").swipebox();
@@ -495,7 +723,7 @@ app.controller('personCtrl', function($scope) {
 		</div>
 	</div>
 	<!--//portfolio-->
-	<!--contact 
+	<!--contact
 	<div class="welcome contact" id="contact">
 		<div class="container">
 			<h3 class="title">Contact Us</h3>
@@ -528,6 +756,14 @@ app.controller('personCtrl', function($scope) {
 	</div>
 	<!--//contact -->
 	<!--footer-->
+<!--<div id="work" class="work">
+		<div class="container">
+			
+
+</div>-->
+	</div>
+	</div>
+
 	<div class="footer">
 		<div class="container">
 			<p>© 2016 My Resume.Template design by W3layouts</p>
@@ -537,16 +773,16 @@ app.controller('personCtrl', function($scope) {
 	<!--smooth-scrolling-of-move-up-->
 	<script type="text/javascript">
 		$(document).ready(function() {
-		
+
 			var defaults = {
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
-				easingType: 'linear' 
+				easingType: 'linear'
 			};
-			
+
 			$().UItoTop({ easingType: 'easeOutQuart' });
-			
+
 		});
 	</script>
 	<!--//smooth-scrolling-of-move-up-->
